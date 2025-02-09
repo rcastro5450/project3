@@ -4,20 +4,22 @@ export default {
     return {
       ingredient: '',
       direction: '',
-      ingredients: [],
-      directions: []
+      ingredients: JSON.parse(localStorage.getItem('ingredients')) || [],
+      directions: JSON.parse(localStorage.getItem('directions')) || []
     };
   },
   methods: {
     addIngredient() {
       if (this.ingredient) {
         this.ingredients.push(this.ingredient);
+        localStorage.setItem('ingredients', JSON.stringify(this.ingredients)); // Save to local storage
         this.ingredient = '';  // Clear the input field
       }
     },
     addDirection() {
       if (this.direction) {
         this.directions.push(this.direction);
+        localStorage.setItem('directions', JSON.stringify(this.directions)); // Save to local storage
         this.direction = '';  // Clear the input field
       }
     }
