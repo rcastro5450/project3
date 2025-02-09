@@ -26,6 +26,7 @@ export default {
 </script>
 <template>
   <div>
+    <h1>RECIPE BUILDER</h1>
     <h2>Add Ingredients</h2>
     <input v-model="ingredient" placeholder="Enter ingredient" />
     <button @click="addIngredient">Add Ingredient</button>
